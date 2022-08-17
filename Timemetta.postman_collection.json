@@ -92,8 +92,8 @@
 							"    pm.environment.set('billing_id', item.id)};\r",
 							"    \r",
 							"};\r",
-							"console.log(pm.environment.id);\r",
-							""
+							"\r",
+							"postman.setNextRequest('Create Project https://api.timetta.com/odata/Projects');"
 						],
 						"type": "text/javascript"
 					}
@@ -147,7 +147,10 @@
 							"});\r",
 							"\r",
 							"var jsonData = pm.response.json();\r",
-							"pm.environment.set('project_id', jsonData.id);"
+							"pm.environment.set('project_id', jsonData.id);\r",
+							"\r",
+							"\r",
+							"postman.setNextRequest('Project https://api.timetta.com/odata/Projects');"
 						],
 						"type": "text/javascript"
 					}
@@ -168,7 +171,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Вершинин Сергей Сергеевич\",\r\n    \"billingTypeId\":\"{{billing_id}}\",\r\n    \"managerId\": \"bcd753cc-0b80-47ae-a471-6ff7f06010e1\"\r\n}",
+					"raw": "{\r\n    \"name\":\"Вершинин Сергей Сергеевич\",\r\n    \"billingTypeId\":\"{{billing_id}}\",\r\n    \"managerId\": \"bcd753cc-0b80-47ae-a471-6ff7f06010e1\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -192,7 +195,7 @@
 			"response": []
 		},
 		{
-			"name": "Project https://api.timetta.com/odata/ProjectRevenueLines()",
+			"name": "Project https://api.timetta.com/odata/Projects",
 			"event": [
 				{
 					"listen": "test",
